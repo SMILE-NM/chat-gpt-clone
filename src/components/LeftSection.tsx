@@ -1,7 +1,7 @@
 import React from 'react';
 
-import chatgptlogo from '@/asset/chatgptlogo.png';
-import nouserlogo from '@/asset/nouserlogo.png';
+import chatgptlogo from '@/assets/chatgptlogo.png';
+import nouserlogo from '@/assets/nouserlogo.png';
 
 import Image from 'next/image';
 import styles from '@/styles/LeftSection.module.css';
@@ -16,8 +16,16 @@ const LeftSection = () => {
       chatName: 'This is sample Chat 2 for chatgpt...',
     },
     {
-      id: 2,
-      chatName: 'This is sample Chat 2 for chatgpt...',
+      id: 3,
+      chatName: 'This is sample Chat 3 for chatgpt...',
+    },
+    {
+      id: 4,
+      chatName: 'This is sample Chat 4 for chatgpt...',
+    },
+    {
+      id: 5,
+      chatName: 'This is sample Chat 5 for chatgpt...',
     },
   ];
   return (
@@ -25,6 +33,7 @@ const LeftSection = () => {
       <div className={styles.newChat}>
         <div>
           <Image src={chatgptlogo} alt="GPT icon" width={50} height={50} />
+          <p className={styles.text1}>New chat</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +50,17 @@ const LeftSection = () => {
           />
         </svg>
       </div>
-      <div className={styles.allChats}></div>
-      <div className={styles.newChat}></div>
+      <div className={styles.allChats}>
+        {allChats.map((chat) => (
+          <div key={chat.id} className={styles.chat}>
+            <p className={styles.text1}>{chat.chatName}</p>
+          </div>
+        ))}
+      </div>
+      <div className={styles.newChat}>
+        <Image src={nouserlogo} alt="ChatGpt" width={50} height={50} />
+        <p className={styles.text1}>Nematov Muhammadjon</p>
+      </div>
     </div>
   );
 };
