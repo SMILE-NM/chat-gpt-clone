@@ -14,9 +14,11 @@ const RightSection = () => {
   const [allMessages, setAllMessages] = useState([]);
 
   const sendMessage = async () => {
-    let url = 'https://api.openai.com/v1/chat/completions';
+    // let url = 'https://api.openai.com/v1/chat/completions';
+    let url = 'https://api.aimlapi.com/chat/completions';
 
     let token = `Bearer ${openAiAPI}`;
+    // let model = 'gpt-3.5-turbo';
     let model = 'gpt-3.5-turbo';
 
     let messagesToSend = [
